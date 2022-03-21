@@ -1,12 +1,9 @@
-import { Routes, Route } from "react-router-dom";
-
-import Main from './pages/Main'
 import Character from './pages/Character'
-import Starship from './pages/Starship'
+import chars from './css/chars.css'
 
 function App() {
   return (
-    <div>hello stas!</div>
+    <Character />
   )
 }
 
