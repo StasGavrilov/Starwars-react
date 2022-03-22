@@ -1,9 +1,9 @@
-import Character from './pages/Character'
+import CharacterList from './pages/CharacterList'
 
 function App() {
   return (
     <div>
-      <Character />
+      <CharacterList />
     </div>
   )
 }
