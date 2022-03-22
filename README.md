@@ -1,4 +1,11 @@
-main:
+Task 1:
 
-list of 10x chars
-each line: name, id,
+* List all Characters
+* Show Character name
+
+Task 2:
+
+* Implement materialUI on Character list component
+* click on char wil show char page
+    - h1 - name
+    - show height, mass, hair_color, skin_color, birth_year, gender in a card(using materialUI)
