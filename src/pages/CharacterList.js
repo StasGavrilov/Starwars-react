@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 // List styling:
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemText from '@mui/material/ListItemText'
 
-import ListItemIcon from '@mui/material/ListItemIcon';
-import StarIcon from '@mui/icons-material/Star';
+// components:
+import Character from './Character'
 
 const CharacterList = () => {
     const [characters, setCharacters] = useState([])
@@ -24,10 +25,14 @@ const CharacterList = () => {
     return (
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }} aria-label="contacts">
             <ListItem disablePadding>
-                <ListItemText primary={characters.map(char => {
-                    return <ListItemButton>
-                        {char.name}
-                    </ListItemButton>
+                <ListItemText primary={characters.map((char, index) => {
+                    return (
+                        <Link to={'/character'} key={index}>
+                            <ListItemButton >
+                                {char.name}
+                            </ListItemButton>
+                        </Link>
+                    )
                 })} />
             </ListItem>
         </List>
