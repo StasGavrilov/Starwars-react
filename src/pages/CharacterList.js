@@ -6,17 +6,18 @@ import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
-import charList from '../css/charList.css'
 
 // components:
 import Character from './Character'
+import characterslist from '../css/characters-list.css'
 
 const CharacterList = () => {
     const [characters, setCharacters] = useState([])
 
     const linkStyling = {
         textDecoration: "none",
-        color: 'Black'
+        color: 'Black',
+        fontWeight: '600'
     }
 
     useEffect(() => {
@@ -34,7 +35,7 @@ const CharacterList = () => {
                 <ListItemText primary={characters.map((char, index) => {
                     return (
                         <div key={index} className='char-name-list'>
-                            <Link to={'/character'} style={linkStyling}>
+                            <Link to={'/character'} style={linkStyling} state={{ data: char }}>
                                 <ListItemButton>
                                     {char.name}
                                 </ListItemButton>
