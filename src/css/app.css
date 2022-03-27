@@ -1,3 +1,5 @@
 body {
-    background-color: aquamarine;
+    background: url('../pictures/background.png');
+    background-position: cover;
+    background-size: cover;
 }

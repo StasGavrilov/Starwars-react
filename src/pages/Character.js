@@ -5,6 +5,12 @@ import { Link, useLocation } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
+// Card styling:
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+
 import character from '../css/character.css'
 
 const Character = () => {
@@ -13,24 +19,43 @@ const Character = () => {
     const linkStyling = {
         textDecoration: "none",
         color: 'White',
-        fontWeight: '600'
+        fontWeight: '500'
     }
 
     return (
         <div>
-            <div>
-                <h1>{data.name}</h1>
-            </div>
+            <Card sx={{ minWidth: 275 }}>
+                <CardContent>
+                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                        Gender: {data.gender}
+                    </Typography>
+                    <Typography variant="h5" component="div">
+                        <h1>{data.name}</h1>
+                    </Typography>
+                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                        Birth: {data.birth_year}
+                    </Typography>
+                    <Typography variant="body2">
+                        Height: {data.height}
+                        <br />
+                        Mass: {data.mass}
+                        <br />
+                        Skin: {data.skin_color}
+                        <br />
+                        Hair: {data.hair_color}
+                    </Typography>
+                </CardContent>
 
-            <div className='back-button'>
-                <Stack direction="row" spacing={2}>
-                    <Button variant="contained">
-                        <Link to={'/'} style={linkStyling}>
-                            Back!
-                        </Link>
-                    </Button>
-                </Stack>
-            </div>
+                <CardActions>
+                    <Stack direction="row" spacing={2}>
+                        <Button variant="contained" size="small">
+                            <Link to={'/'} style={linkStyling}>
+                                Back!
+                            </Link>
+                        </Button>
+                    </Stack>
+                </CardActions>
+            </Card>
         </div>
     )
 }
