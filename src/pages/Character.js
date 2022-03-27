@@ -1,9 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
+import { Link } from 'react-router-dom'
 
-const Character = (props) => {
+const Character = () => {
     return (
         <div>
             Hello
+
+            <div>
+                <Link to={'/'}>
+                    <button>Back!</button>
+                </Link>
+            </div>
         </div>
     )
 }
