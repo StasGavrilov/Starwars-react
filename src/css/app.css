@@ -1,5 +1,8 @@
+@import 'font.css';
+
 body {
     background: url('../pictures/background.png');
     background-position: cover;
     background-size: cover;
+    font-family: Gotham Rounded, sans-serif;
 }

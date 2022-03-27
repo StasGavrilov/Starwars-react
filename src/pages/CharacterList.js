@@ -8,7 +8,6 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 
 // components:
-import Character from './Character'
 import characterslist from '../css/characters-list.css'
 
 const CharacterList = () => {
@@ -16,8 +15,9 @@ const CharacterList = () => {
 
     const linkStyling = {
         textDecoration: "none",
-        color: 'Black',
-        fontWeight: '600'
+        color: 'White',
+        fontFamily: 'Gotham Rounded, sans-serif',
+        fontSize: 30
     }
 
     useEffect(() => {
@@ -30,21 +30,25 @@ const CharacterList = () => {
     }, [])
 
     return (
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }} aria-label="contacts">
-            <ListItem disablePadding>
-                <ListItemText primary={characters.map((char, index) => {
-                    return (
-                        <div key={index} className='char-name-list'>
-                            <Link to={'/character'} style={linkStyling} state={{ data: char }}>
-                                <ListItemButton>
-                                    {char.name}
-                                </ListItemButton>
-                            </Link>
-                        </div>
-                    )
-                })} />
-            </ListItem>
-        </List>
+        <div>
+            <h1 className='title'>Starwars</h1>
+
+            <List sx={{ maxWidth: 360 }}>
+                <ListItem disablePadding>
+                    <ListItemText primary={characters.map((char, index) => {
+                        return (
+                            <div key={index} className='char-name-list'>
+                                <Link to={'/character'} style={linkStyling} state={{ data: char }}>
+                                    <ListItemButton sx={{ justifyContent: 'center' }}>
+                                        {char.name}
+                                    </ListItemButton>
+                                </Link>
+                            </div>
+                        )
+                    })} />
+                </ListItem>
+            </List>
+        </div>
     )
 }
 
