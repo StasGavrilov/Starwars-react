@@ -1,4 +1,19 @@
-.info {
+.char-name {
+    color: white;
+    text-align: center;
+}
+
+.char-info {
     text-decoration: underline;
     font-weight: bold;
+    font-size: 1.1rem;
+    margin: 4px;
 }
+
+.char-stat {
+    font-weight: bold;
+}
+/*
+.card {
+    text-align: -webkit-center;
+} */

@@ -18,38 +18,42 @@ const Character = () => {
     const linkStyling = {
         textDecoration: "none",
         color: 'White',
-        fontFamily: 'Gotham Rounded, sans-serif'
+        fontFamily: 'Gotham Rounded, sans-serif',
     }
 
     return (
         <div>
-            <h1>{data.name}</h1>
+            <h1 className='char-name'>{data.name}</h1>
 
-            <Card sx={{ width: 165, marginBottom: 1 }}>
-                <CardContent>
-                    <Typography sx={{ fontFamily: 'Gotham Rounded, sans-serif' }}>
-                        <div className='info'>Character Info:</div>
-                        Height: {data.height}
-                        <br />
-                        Mass: {data.mass}
-                        <br />
-                        Hair: {data.hair_color}
-                        <br />
-                        Skin: {data.skin_color}
-                        <br />
-                        Birth: {data.birth_year}
-                        <br />
-                        Gender: {data.gender}
-                        <br />
-                    </Typography>
-                </CardContent>
-            </Card>
+            <div className="card">
+                <Card sx={{ width: 175, marginBottom: 1 }}>
+                    <CardContent>
+                        <Typography sx={{ fontFamily: 'Gotham Rounded, sans-serif' }}>
+                            <div className='char-info'>Character Info</div>
+                            <span className='char-stat'>Height:</span> {data.height}
+                            <br />
+                            <span className='char-stat'>Mass:</span> {data.mass}
+                            <br />
+                            <span className='char-stat'>Hair:</span> {data.hair_color}
+                            <br />
+                            <span className='char-stat'>Skin:</span> {data.skin_color}
+                            <br />
+                            <span className='char-stat'>Birth:</span> {data.birth_year}
+                            <br />
+                            <span className='char-stat'>Gender:</span> {data.gender}
+                            <br />
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </div>
 
-            <Button variant="contained" size="small">
-                <Link to={'/'} style={linkStyling}>
-                    Back!
-                </Link>
-            </Button>
+            <div className='back-button'>
+                <Button variant="contained" size="small">
+                    <Link to={'/'} style={linkStyling}>
+                        Back!
+                    </Link>
+                </Button>
+            </div>
         </div>
     )
 }

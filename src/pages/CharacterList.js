@@ -15,7 +15,7 @@ const CharacterList = () => {
 
     const linkStyling = {
         textDecoration: "none",
-        color: 'White',
+        color: 'white',
         fontFamily: 'Gotham Rounded, sans-serif',
         fontSize: 30
     }
@@ -33,7 +33,7 @@ const CharacterList = () => {
         <div>
             <h1 className='title'>Starwars</h1>
 
-            <List sx={{ maxWidth: 360 }}>
+            <List>
                 <ListItem disablePadding>
                     <ListItemText primary={characters.map((char, index) => {
                         return (
