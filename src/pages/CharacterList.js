@@ -15,9 +15,10 @@ const CharacterList = () => {
 
     const linkStyling = {
         textDecoration: "none",
-        color: 'white',
+        color: 'red',
         fontFamily: 'Gotham Rounded, sans-serif',
-        fontSize: 30
+        fontSize: 30,
+        fontWeight: 'bold'
     }
 
     useEffect(() => {

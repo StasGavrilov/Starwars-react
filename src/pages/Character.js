@@ -18,7 +18,7 @@ const Character = () => {
     const linkStyling = {
         textDecoration: "none",
         color: 'White',
-        fontFamily: 'Gotham Rounded, sans-serif',
+        fontFamily: 'Gotham Rounded, sans-serif'
     }
 
     return (
@@ -26,9 +26,9 @@ const Character = () => {
             <h1 className='char-name'>{data.name}</h1>
 
             <div className="card">
-                <Card sx={{ width: 175, marginBottom: 1 }}>
+                <Card sx={{ marginBottom: 1 }}>
                     <CardContent>
-                        <Typography sx={{ fontFamily: 'Gotham Rounded, sans-serif' }}>
+                        <Typography component={'div'} sx={{ fontFamily: 'Gotham Rounded, sans-serif' }}>
                             <div className='char-info'>Character Info</div>
                             <span className='char-stat'>Height:</span> {data.height}
                             <br />
@@ -48,7 +48,7 @@ const Character = () => {
             </div>
 
             <div className='back-button'>
-                <Button variant="contained" size="small">
+                <Button variant="contained">
                     <Link to={'/'} style={linkStyling}>
                         Back!
                     </Link>

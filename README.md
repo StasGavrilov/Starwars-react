@@ -9,7 +9,7 @@ Task 2:
     - show height, mass, hair_color, skin_color, birth_year, gender in a card (using materialUI) ✓
 
 Task 3:
-* Place card and list in the middle
+* Place the card and the list in the middle ✓
 * Check how it bring the object after refresh
 * Fix text decoration ✓
 * Add pagination

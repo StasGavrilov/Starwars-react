@@ -1,5 +1,5 @@
 .char-name {
-    color: white;
+    color: red;
     text-align: center;
 }
 
@@ -8,12 +8,23 @@
     font-weight: bold;
     font-size: 1.1rem;
     margin: 4px;
+    text-align: center;
 }
 
 .char-stat {
     font-weight: bold;
 }
-/*
+
 .card {
-    text-align: -webkit-center;
-} */
+    margin: auto;
+    width: 250px;
+    padding: 10px;
+}
+
+.back-button {
+    position: absolute;
+    left:    0;
+    bottom:   0;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
