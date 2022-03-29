@@ -23,8 +23,8 @@
 
 .back-button {
     position: absolute;
-    left:    0;
+    right:    0;
     bottom:   0;
     margin-bottom: 15px;
-    margin-left: 15px;
+    margin-right: 15px;
 }

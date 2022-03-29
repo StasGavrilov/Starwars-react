@@ -10,6 +10,6 @@ Task 2:
 
 Task 3:
 * Place the card and the list in the middle ✓
-* Check how it bring the object after refresh
 * Fix text decoration ✓
 * Add pagination
+* watch MUI videos

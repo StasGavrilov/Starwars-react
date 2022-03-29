@@ -1,25 +1,12 @@
 import React from "react"
 import { Link, useLocation } from 'react-router-dom'
-
-// Button styling:
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-
-// Card styling:
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-
+import { Button, Card, CardContent, Typography } from '@mui/material/'
 import character from '../css/character.css'
 
 const Character = () => {
     const location = useLocation()
     const { data } = location.state
-    const linkStyling = {
-        textDecoration: "none",
-        color: 'White',
-        fontFamily: 'Gotham Rounded, sans-serif'
-    }
+    const linkStyling = { textDecoration: "none", color: 'White', fontFamily: 'Gotham Rounded, sans-serif' }
 
     return (
         <div>
