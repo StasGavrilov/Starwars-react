@@ -21,11 +21,12 @@ const CharacterList = () => {
         fetch(data_base + `?page=${page}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data) // to show vadim
                 setCharacters(data.results)
-                setPageQty(data.count)
+                const pageNum = Math.ceil(data.count / 10)
+                setPageQty(pageNum)
             })
     }, [page])
+    console.log(page)
 
     return (
         <>
@@ -36,7 +37,7 @@ const CharacterList = () => {
                     <ListItemText primary={characters.map((char, index) => {
                         return (
                             <div key={index} className='char-name-list'>
-                                <Link to={'/character'} style={linkStyling} state={{ data: char }}>
+                                <Link to={'/character'} style={linkStyling} state={{ data: char, page: page }}>
                                     <ListItemButton sx={{ justifyContent: 'center' }}>
                                         {char.name}
                                     </ListItemButton>
@@ -49,7 +50,7 @@ const CharacterList = () => {
 
             <div className='page-nav'>
                 {!!pageQty && (<Pagination
-                    count={9}
+                    count={pageQty}
                     page={page}
                     onChange={(_, num) => setPage(num)}
                     showFirstButton
