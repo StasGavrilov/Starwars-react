@@ -11,5 +11,4 @@ Task 2:
 Task 3:
 * Place the card and the list in the middle ✓
 * Fix text decoration ✓
-* Add pagination
-* watch MUI videos
+* Add pagination ✓

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { List, ListItem, ListItemButton, ListItemText, Pagination, PaginationItem } from '@mui/material/'
 import characterslist from '../css/characters-list.css'
+import Loading from './Loading'
 
 const data_base = 'https://swapi.dev/api/people/'
 
@@ -26,27 +27,28 @@ const CharacterList = () => {
                 setPageQty(pageNum)
             })
     }, [page])
-    console.log(page)
 
     return (
         <>
             <h1 className='title'>Starwars</h1>
 
-            <List>
-                <ListItem disablePadding>
-                    <ListItemText primary={characters.map((char, index) => {
-                        return (
-                            <div key={index} className='char-name-list'>
-                                <Link to={'/character'} style={linkStyling} state={{ data: char, page: page }}>
-                                    <ListItemButton sx={{ justifyContent: 'center' }}>
-                                        {char.name}
-                                    </ListItemButton>
-                                </Link>
-                            </div>
-                        )
-                    })} />
-                </ListItem>
-            </List>
+            {characters.length === 0 ? <Loading />
+                : <List>
+                    <ListItem disablePadding>
+                        <ListItemText primary={characters.map((char, index) => {
+                            return (
+                                <div key={index} className='char-name-list'>
+                                    <Link to={'/character'} style={linkStyling} state={{ data: char, page: page }}>
+                                        <ListItemButton sx={{ justifyContent: 'center' }}>
+                                            {char.name}
+                                        </ListItemButton>
+                                    </Link>
+                                </div>
+                            )
+                        })} />
+                    </ListItem>
+                </List>
+            }
 
             <div className='page-nav'>
                 {!!pageQty && (<Pagination

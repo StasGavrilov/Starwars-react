@@ -36,7 +36,7 @@ const Character = () => {
 
             <div className='back-button'>
                 <Button variant="contained">
-                    <Link to={`/?page=${location.state.page}`} style={linkStyling}>
+                    <Link to={`/?page=${location.state.page}`} style={linkStyling} >
                         Back!
                     </Link>
                 </Button>
