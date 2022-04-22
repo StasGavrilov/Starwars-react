@@ -1,5 +1,3 @@
-import loading from '../css/loading.css'
-
 const Loading = () => {
     return (
         <div className="loading">

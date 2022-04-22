@@ -1,4 +1,7 @@
 @import 'font.css';
+@import 'character.css';
+@import 'characters-list.css';
+@import 'loading.css';
 
 body {
     font-family: Gotham Rounded, sans-serif;

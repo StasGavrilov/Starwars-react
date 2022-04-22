@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { List, ListItem, ListItemButton, ListItemText, Pagination, PaginationItem } from '@mui/material/'
-import characterslist from '../css/characters-list.css'
 import Loading from './Loading'
 
 const data_base = 'https://swapi.dev/api/people/'
@@ -37,7 +36,7 @@ const CharacterList = () => {
                     <ListItem disablePadding>
                         <ListItemText primary={characters.map((char, index) => {
                             return (
-                                <div key={index} className='char-name-list'>
+                                <div key={index} className='char-name-list' data-testid={`character-item-${index}`}>
                                     <Link to={'/character'} style={linkStyling} state={{ data: char, page: page }}>
                                         <ListItemButton sx={{ justifyContent: 'center' }}>
                                             {char.name}
@@ -57,7 +56,6 @@ const CharacterList = () => {
                     onChange={(_, num) => setPage(num)}
                     showFirstButton
                     showLastButton
-                    sx={{ marginY: 6 }}
                     renderItem={item => (
                         <PaginationItem component={Link} to={`/?page=${item.page}`} {...item} />
                     )}

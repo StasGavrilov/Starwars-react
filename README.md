@@ -12,3 +12,7 @@ Task 3:
 * Place the card and the list in the middle ✓
 * Fix text decoration ✓
 * Add pagination ✓
+
+Task 4:
+* Add tests
+* Fixed the Character page

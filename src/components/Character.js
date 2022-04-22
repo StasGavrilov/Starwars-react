@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, useLocation } from 'react-router-dom'
 import { Button, Card, CardContent, Typography } from '@mui/material/'
-import character from '../css/character.css'
 
 const Character = () => {
     const location = useLocation()
@@ -13,7 +12,7 @@ const Character = () => {
             <h1 className='char-name'>{data.name}</h1>
 
             <div className="card">
-                <Card sx={{ marginBottom: 1 }}>
+                <Card>
                     <CardContent>
                         <Typography component={'div'} sx={{ fontFamily: 'Gotham Rounded, sans-serif' }}>
                             <div className='char-info'>Character Info</div>
