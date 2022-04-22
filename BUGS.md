@@ -2,6 +2,8 @@ TODO:
 * After goes back from Character page it always goes back to page 1 after refresh also
 * Fix the scrolling
 * Pagination is moving with number of the characters
+* Need to move all styles to CSS files
+* URL not working, not going to the requested page
 
 DONE:
 * url not changing after back to page 1 with refresh

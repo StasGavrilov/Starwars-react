@@ -9,13 +9,6 @@ const CharacterList = () => {
     const [characters, setCharacters] = useState([])
     const [page, setPage] = useState(1)
     const [pageQty, setPageQty] = useState(0)
-    const linkStyling = {
-        textDecoration: "none",
-        color: 'red',
-        fontFamily: 'Gotham Rounded, sans-serif',
-        fontSize: 30,
-        fontWeight: 'bold'
-    }
 
     useEffect(() => {
         fetch(data_base + `?page=${page}`)
@@ -36,8 +29,8 @@ const CharacterList = () => {
                     <ListItem disablePadding>
                         <ListItemText primary={characters.map((char, index) => {
                             return (
-                                <div key={index} className='char-name-list' data-testid={`character-item-${index}`}>
-                                    <Link to={'/character'} style={linkStyling} state={{ data: char, page: page }}>
+                                <div key={index} data-testid={`character-item-${index}`}>
+                                    <Link to={'/character'} state={{ data: char, page: page }} className='char-item-list'>
                                         <ListItemButton sx={{ justifyContent: 'center' }}>
                                             {char.name}
                                         </ListItemButton>
@@ -49,19 +42,18 @@ const CharacterList = () => {
                 </List>
             }
 
-            <div className='page-nav'>
-                {!!pageQty && (<Pagination
-                    count={pageQty}
-                    page={page}
-                    onChange={(_, num) => setPage(num)}
-                    showFirstButton
-                    showLastButton
-                    renderItem={item => (
-                        <PaginationItem component={Link} to={`/?page=${item.page}`} {...item} />
-                    )}
-                />
+            {!!pageQty && (<Pagination
+                className='page-nav'
+                count={pageQty}
+                page={page}
+                onChange={(_, num) => setPage(num)}
+                showFirstButton
+                showLastButton
+                renderItem={item => (
+                    <PaginationItem component={Link} to={`/?page=${item.page}`} {...item} />
                 )}
-            </div>
+            />
+            )}
         </>
     )
 }

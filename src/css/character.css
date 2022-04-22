@@ -4,11 +4,18 @@
     font-size: 6rem;
 }
 
+.card {
+    margin: auto;
+    width: 250px;
+    padding: 10px;
+}
+
 .char-info {
     text-decoration: underline;
     font-weight: bold;
     font-size: 1.1rem;
     margin: 4px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -16,16 +23,20 @@
     font-weight: bold;
 }
 
-.card {
-    margin: auto;
-    width: 250px;
-    padding: 10px;
+.char-stat-span {
+    font-weight: normal;
 }
 
 .back-button {
     position: absolute;
-    right:    0;
-    bottom:   0;
+    right: 0;
+    bottom: 0;
     margin-bottom: 15px;
     margin-right: 15px;
+}
+
+.back-btn-link {
+    font-family: Gotham Rounded, sans-serif;
+    text-decoration: none;
+    color: white;
 }
