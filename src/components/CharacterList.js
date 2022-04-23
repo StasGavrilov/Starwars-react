@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { List, ListItem, ListItemButton, ListItemText, Pagination, PaginationItem } from '@mui/material/'
+import { List, ListItem, ListItemButton, Pagination, PaginationItem } from '@mui/material/'
 import Loading from './Loading'
 
 const data_base = 'https://swapi.dev/api/people/'
@@ -15,36 +15,35 @@ const CharacterList = () => {
             .then(response => response.json())
             .then(data => {
                 setCharacters(data.results)
-                const pageNum = Math.ceil(data.count / 10)
-                setPageQty(pageNum)
+                const pageCount = Math.ceil(data.count / 10)
+                setPageQty(pageCount)
             })
     }, [page])
 
-    console.log(page)
-
     return (
         <>
-            <h1 className='title'>Starwars</h1>
+            <h1 className='title' data-testid={'character-list-title'}>Starwars</h1>
 
             {characters.length === 0 ? <Loading />
-                : <List>
-                    <ListItem disablePadding>
-                        <ListItemText primary={characters.map((char, index) => {
-                            return (
-                                <div key={index} data-testid={`character-item-${index}`}>
+                : <div className='list-container'>
+                    <List>
+                        {characters.map((char, index) => (
+                            <ListItem disablePadding key={index} sx={{ justifyContent: 'center' }}>
+                                <div data-testid={`character-item-${index}`}>
                                     <Link to={'/character'} state={{ data: char, page: page }} className='char-item-list'>
-                                        <ListItemButton sx={{ justifyContent: 'center' }}>
+                                        <ListItemButton>
                                             {char.name}
                                         </ListItemButton>
                                     </Link>
                                 </div>
-                            )
-                        })} />
-                    </ListItem>
-                </List>
+                            </ListItem>
+                        ))}
+                    </List>
+                </div>
             }
 
-            {!!pageQty && (<Pagination
+            {pageQty > 0 ? <Pagination
+                data-testid={'page-list'}
                 className='page-nav'
                 count={pageQty}
                 page={page}
@@ -54,8 +53,8 @@ const CharacterList = () => {
                 renderItem={item => (
                     <PaginationItem component={Link} to={`/?page=${item.page}`} {...item} />
                 )}
-            />
-            )}
+            /> : null
+            }
         </>
     )
 }

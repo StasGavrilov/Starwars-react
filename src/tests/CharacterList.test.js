@@ -11,9 +11,21 @@ const MockCharactersList = () => {
 }
 
 describe('CharacterList', () => {
+    it('should have title', () => {
+        render(<MockCharactersList />)
+        const titleElement = screen.getByTestId(/character-list-title/i)
+        expect(titleElement.innerHTML).toBe('Starwars')
+    })
+
     it('should render multiple character items', async () => {
         render(<MockCharactersList />);
         const characterDivElements = await screen.findAllByTestId(/character-item/i);
         expect(characterDivElements.length).toBe(10);
     });
+
+    // it('should have pagination', () => {
+    //     render(<MockCharactersList />)
+    //     const pageElement = screen.findAllByTestId(/page-list/i);
+    //     expect(pageElement).toBe(9);
+    // })
 })

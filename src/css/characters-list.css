@@ -5,6 +5,13 @@
     margin: 0;
 }
 
+.list-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 .char-item-list {
     font-family: Gotham Rounded, sans-serif;
     font-size: 2rem;
