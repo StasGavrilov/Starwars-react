@@ -20,6 +20,8 @@ const CharacterList = () => {
             })
     }, [page])
 
+    console.log(page)
+
     return (
         <>
             <h1 className='title'>Starwars</h1>

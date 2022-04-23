@@ -5,6 +5,9 @@ import { Button, Card, CardContent, Typography } from '@mui/material/'
 const Character = () => {
     const location = useLocation()
     const { data } = location.state
+    const page = location.state.page
+
+    console.log(page)
 
     return (
         <>
@@ -26,7 +29,7 @@ const Character = () => {
 
             <div className='back-button'>
                 <Button variant="contained">
-                    <Link to={`/?page=${location.state.page}`} className='back-btn-link'>
+                    <Link to={`/?page=${page}`} className='back-btn-link'>
                         Back!
                     </Link>
                 </Button>
