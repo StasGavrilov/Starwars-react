@@ -9,7 +9,6 @@ const CharacterList = () => {
     const [characters, setCharacters] = useState([])
     const [page, setPage] = useState(1)
     const [pageQty, setPageQty] = useState(0)
-    const [vehicles, setVehicles] = useState([])
 
     useEffect(() => {
         fetch(data_base + `?page=${page}`)
@@ -28,10 +27,10 @@ const CharacterList = () => {
             {characters.length === 0 ? <Loading />
                 : <div className='list-container'>
                     <List>
-                        {characters.map((char, index) => (
+                        {characters.map((char, index, vehicles) => (
                             <ListItem disablePadding key={index} sx={{ justifyContent: 'center' }}>
                                 <div data-testid={`character-item-${index}`}>
-                                    <Link to={'/character'} state={{ data: char, page: page, vehicles: vehicles }} className='char-item-list'>
+                                    <Link to={'/character'} state={{ data: char, page: page }} className='char-item-list'>
                                         <ListItemButton>
                                             {char.name}
                                         </ListItemButton>

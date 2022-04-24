@@ -22,10 +22,4 @@ describe('CharacterList', () => {
         const characterDivElements = await screen.findAllByTestId(/character-item/i);
         expect(characterDivElements.length).toBe(10);
     });
-
-    // it('should have pagination', () => {
-    //     render(<MockCharactersList />)
-    //     const pageElement = screen.findAllByTestId(/page-list/i);
-    //     expect(pageElement).toBe(9);
-    // })
 })
