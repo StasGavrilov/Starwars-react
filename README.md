@@ -16,3 +16,4 @@ Task 3:
 Task 4:
 * Add tests
 * Fixed the Character page
+    - add 3 cards: vehicles, starships and planet

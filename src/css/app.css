@@ -2,6 +2,7 @@
 @import 'character.css';
 @import 'characters-list.css';
 @import 'loading.css';
+@import 'card.css';
 
 body {
     font-family: Gotham Rounded, sans-serif;

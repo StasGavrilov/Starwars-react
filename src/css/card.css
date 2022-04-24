@@ -1,0 +1,21 @@
+.card {
+    margin: auto;
+    width: 250px;
+}
+
+.char-info {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 4px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.char-stat {
+    font-weight: bold;
+}
+
+.char-stat-span {
+    font-weight: normal;
+}
