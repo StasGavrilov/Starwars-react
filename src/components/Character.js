@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Button, Container } from '@mui/material/'
+import { Button } from '@mui/material/'
 import CharInfo from "../cards/CharInfo"
 import Planet from "../cards/Planet"
 import Starship from "../cards/Starship"
@@ -22,7 +22,6 @@ const Character = () => {
                 .then(res => res.json())
                 .then(data => {
                     setPlanet(data)
-
                 })
         }
 
@@ -48,20 +47,21 @@ const Character = () => {
         return Object.keys(entity).length === 0
     }
 
+    const checkingData = checkData(planet, 'homeworld', starship, 'starships', vehicle, 'vehicles')
+
     return (
         <>
-            <Container>
-                <h1 className='char-name'>{data.name}</h1>
+            <h1 className='char-name' data-testid='character-list-title'>{data.name}</h1>
 
-                {checkData(planet, 'homeworld') ? <Loading />
-                    : <div className="character-container">
-                        <CharInfo data={data} />
-                        <Planet data={planet} />
-                        <Starship data={starship} />
-                        <Vehicle data={vehicle} />
-                    </div>
-                }
-            </Container>
+            {checkingData ? <Loading />
+                : <div className="character-container">
+                    <CharInfo data={data} />
+                    <Planet data={planet} />
+                    <Starship data={starship} />
+                    <Vehicle data={vehicle} />
+
+                </div>
+            }
 
             <div className='back-button'>
                 <Button variant="contained" endIcon={<KeyboardBackspaceIcon />}>

@@ -1,10 +1,12 @@
-import { Card, CardContent } from '@mui/material/'
+import { Card, CardActionArea, CardContent, Typography } from '@mui/material/'
 
 const CharInfo = ({ data }) => {
     return (
         <Card className="card">
             <CardContent>
-                <p className='char-info'>Character Description</p>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Character Description
+                </Typography>
                 <p className='char-stat'>Height: <span className='char-stat-span'>{data.height}</span></p>
                 <p className='char-stat'>Mass: <span className='char-stat-span'>{data.mass}</span></p>
                 <p className='char-stat'>Hair: <span className='char-stat-span'>{data.hair_color}</span></p>

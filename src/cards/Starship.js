@@ -1,10 +1,13 @@
-import { Card, CardContent } from '@mui/material/'
+import { Card, CardContent, Typography } from '@mui/material/'
 
 const Starships = ({ data }) => {
     return (
         <Card className="card">
             <CardContent>
-                <p className='char-info'>Starship</p>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Starship
+                </Typography>
+                {/* <p className='char-info'>Starship</p> */}
                 <p className='char-stat'>Name: <span className='char-stat-span'>{data.name}</span></p>
                 <p className='char-stat'>Model: <span className='char-stat-span'>{data.model}</span></p>
                 <p className='char-stat'>Created: <span className='char-stat-span'>{data.created}</span></p>
