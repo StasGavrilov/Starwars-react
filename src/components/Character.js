@@ -42,25 +42,16 @@ const Character = () => {
         }
     }, [])
 
-    const checkData = (entity, entityName) => {
-        if (data[entityName].length === 0) return false
-        return Object.keys(entity).length === 0
-    }
-
-    const checkingData = checkData(planet, 'homeworld', starship, 'starships', vehicle, 'vehicles')
-
     return (
         <>
             <h1 className='char-name' data-testid='character-list-title'>{data.name}</h1>
 
-            {checkingData ? <Loading />
-                : <div className="character-container">
-                    <CharInfo data={data} />
-                    <Planet data={planet} />
-                    <Starship data={starship} />
-                    <Vehicle data={vehicle} />
-                </div>
-            }
+            <div className="character-container">
+                <CharInfo data={data} />
+                <Planet data={data.homeworld.length === 0 ? null : planet} />
+                <Starship data={data.starships.length === 0 ? null : starship} />
+                <Vehicle data={data.vehicles.length === 0 ? null : vehicle} />
+            </div>
 
             <div className='back-button'>
                 <Button variant="contained" endIcon={<KeyboardBackspaceIcon />}>

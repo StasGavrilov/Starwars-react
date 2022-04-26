@@ -1,7 +1,11 @@
 import { Card, CardContent, Typography } from '@mui/material/'
 
 const Planet = ({ data }) => {
-    if (Object.keys(data).length === 0) return ''
+    if (data === null) return ''
+
+    if (Object.keys(data).length === 0) {
+        return <div className='secondery-loading'>Loading...</div>
+    }
 
     return (
         <Card className="card">
