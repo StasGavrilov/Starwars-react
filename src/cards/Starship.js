@@ -1,6 +1,6 @@
 import { Card, CardContent, Typography } from '@mui/material/'
 
-const Starships = ({ data }) => {
+const Starship = ({ data }) => {
     if (Object.keys(data).length === 0) return ''
 
     return (
@@ -22,4 +22,4 @@ const Starships = ({ data }) => {
     )
 }
 
-export default Starships;
+export default Starship;

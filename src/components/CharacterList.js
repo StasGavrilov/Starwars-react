@@ -10,7 +10,7 @@ const data_base = 'https://swapi.dev/api/people/'
 const CharacterList = () => {
     const [characters, setCharacters] = useState([])
     const [isError, setIsError] = useState(false)
-    const [page, setPage] = useState(1) // rename to currentPage
+    const [page, setPage] = useState(1)
     const [pageQty, setPageQty] = useState(0)
 
     useEffect(() => {
