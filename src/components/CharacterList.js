@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { List, ListItem, ListItemButton, Pagination, PaginationItem } from '@mui/material/'
 import Loading from './Loading'
+import SearchAppBar from './SearchAppBar'
+import Error from './Error'
 
 const data_base = 'https://swapi.dev/api/people/'
 
 const CharacterList = () => {
     const [characters, setCharacters] = useState([])
-    const [page, setPage] = useState(1)
+    const [isError, setIsError] = useState(false)
+    const [page, setPage] = useState(1) // rename to currentPage
     const [pageQty, setPageQty] = useState(0)
 
     useEffect(() => {
@@ -24,25 +27,30 @@ const CharacterList = () => {
         <>
             <h1 className='title' data-testid={'character-list-title'}>Starwars</h1>
 
-            {characters.length === 0 ? <Loading />
-                : <div className='list-container'>
-                    <List>
-                        {characters.map((char, index, vehicles) => (
-                            <ListItem disablePadding key={index} sx={{ justifyContent: 'center' }}>
-                                <div data-testid={`character-item-${index}`}>
-                                    <Link to={'/character'} state={{ data: char, page: page }} className='char-item-list'>
-                                        <ListItemButton>
-                                            {char.name}
-                                        </ListItemButton>
-                                    </Link>
-                                </div>
-                            </ListItem>
-                        ))}
-                    </List>
-                </div>
+            <SearchAppBar setCharacters={setCharacters} setIsError={setIsError} />
+
+            {isError ? <Error />
+                : characters.length === 0 ? <Loading />
+                    : <>
+                        <div className='list-container'>
+                            <List>
+                                {characters.map((char, index) => (
+                                    <ListItem disablePadding key={index} sx={{ justifyContent: 'center' }}>
+                                        <div data-testid={`character-item-${index}`}>
+                                            <Link to={'/character'} state={{ data: char, page: page }} className='char-item-list'>
+                                                <ListItemButton>
+                                                    {char.name}
+                                                </ListItemButton>
+                                            </Link>
+                                        </div>
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </div>
+                    </>
             }
 
-            {pageQty > 0 ? <Pagination
+            {pageQty > 0 && !isError ? <Pagination
                 data-testid={'page-list'}
                 className='page-nav'
                 count={pageQty}

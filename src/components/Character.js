@@ -59,7 +59,6 @@ const Character = () => {
                     <Planet data={planet} />
                     <Starship data={starship} />
                     <Vehicle data={vehicle} />
-
                 </div>
             }
 

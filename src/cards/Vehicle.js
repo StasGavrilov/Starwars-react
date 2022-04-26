@@ -1,13 +1,14 @@
 import { Card, CardContent, Typography } from '@mui/material/'
 
 const Vehicles = ({ data }) => {
+    if (Object.keys(data).length === 0) return ''
+
     return (
         <Card className="card">
             <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                     Vehicle
                 </Typography>
-                {/* <p className='char-info'>Vehicle</p> */}
                 <p className='char-stat'>Name: <span className='char-stat-span'>{data.name}</span></p>
                 <p className='char-stat'>Model: <span className='char-stat-span'>{data.model}</span></p>
                 <p className='char-stat'>Created: <span className='char-stat-span'>{data.created}</span></p>
