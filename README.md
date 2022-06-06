@@ -14,9 +14,9 @@ Task 3:
 * Add pagination ✓
 
 Task 4:
-* (MUST) Add tests to Character component
+* (MUST) Add tests to Character component ✓
 * (MUST) Fixed the Character page
     - add 3 cards: vehicles, starships and planet ✓
     - make all the cards the same height ✓
-* Add search
+* Add search ✓
 * Add favorites button that will save the character in localStorage
